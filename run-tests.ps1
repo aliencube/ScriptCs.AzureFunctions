@@ -1,13 +1,14 @@
 Param(
-    [string] [Parameter(Mandatory=$true)] $Configuration
+    [string] [Parameter(Mandatory=$true)] $Configuration,
+    [string] [Parameter(Mandatory=$false)] $Target = "net46"
 )
 
-$xunit = ".\packages\xunit.runner.console.2.2.0-beta2-build3300\tools\xunit.console.exe"
+$xunit = ".\packages\xunit.runner.console.2.1.0\tools\xunit.console.exe"
 $projects = Get-ChildItem .\test | ?{ $_.PSIsContainer }
 foreach($project in $projects)
 {
     $projectPath = $project.FullName;
     $projectName = $project.Name;
 
-    & $xunit $projectPath\bin\$Configuration\net46\Aliencube.$projectName.dll -appveyor
+    & $xunit $projectPath\bin\$Configuration\$Target\Aliencube.$projectName.dll -appveyor
 }

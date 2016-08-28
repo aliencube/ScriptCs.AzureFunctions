@@ -15,7 +15,7 @@
     target_framework_version: v4.6
     target_version: net46
   build_script:
-  - cmd: tools\nuget restore ScriptCs.AzureFunctions.Sdk.sln
+  - cmd: tools\nuget restore ScriptCs.AzureFunctions.sln
   - cmd: msbuild ScriptCs.AzureFunctions.sln /t:ReBuild /v:minimal /p:Configuration=$env:CONFIGURATION;TargetFrameworkVersion=$env:target_framework_version;DefineConstants="DEBUG;TRACE;TEST";OutPutPath=bin\Debug\$env:target_version
   test_script:
   - cmd: tools\nuget restore ScriptCs.AzureFunctions.sln

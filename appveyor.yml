@@ -19,7 +19,7 @@
   test_script:
   - cmd: tools\nuget restore ScriptCs.AzureFunctions.sln
   - cmd: msbuild ScriptCs.AzureFunctions.sln /t:ReBuild /v:minimal /p:Configuration=Debug;TargetFrameworkVersion=v4.6;DefineConstants="DEBUG;TRACE";OutPutPath=bin\$(configuration)\$(target_version)
-  - ps: .\run-tests.ps1 -Configuration $(configuration) -TargetVersion $(target_version)
+  - ps: .\run-tests.ps1 -Configuration $(env:configuration) -TargetVersion $(env:target_version)
 
 # for release/all branch
 -
@@ -49,10 +49,10 @@
   test_script:
   - cmd: tools\nuget restore ScriptCs.AzureFunctions.sln
   - cmd: msbuild ScriptCs.AzureFunctions.sln /t:ReBuild /v:minimal /p:Configuration=Release;TargetFrameworkVersion=v4.6;DefineConstants="TRACE";OutPutPath=bin\$(configuration)\$(target_version)
-  - ps: .\run-tests.ps1 -Configuration $(configuration) -TargetVersion $(target_version)
+  - ps: .\run-tests.ps1 -Configuration $(env:configuration) -TargetVersion $(env:target_version)
   after_test:
   - cmd: msbuild ScriptCs.AzureFunctions.sln /t:ReBuild /v:minimal /p:Configuration=Release;TargetFrameworkVersion=v4.6;DefineConstants="TRACE";OutPutPath=bin\$(configuration)\$(target_version)
-  - ps: .\run-tests.ps1 -Configuration $(configuration) -TargetVersion $(target_version)
+  - ps: .\run-tests.ps1 -Configuration $(env:configuration) -TargetVersion $(env:target_version)
   artifacts:
   - path: '**\Aliencube.ScriptCs.AzureFunctions.*.nupkg'
     name: Aliencube.ScriptCs.AzureFunctions

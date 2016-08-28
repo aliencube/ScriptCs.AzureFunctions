@@ -10,5 +10,5 @@ foreach($project in $projects)
     $projectPath = $project.FullName;
     $projectName = $project.Name;
 
-    & $xunit $projectPath\bin\$Configuration\$Target\Aliencube.$projectName.dll -appveyor
+    & $xunit $projectPath\bin\$Configuration\$TargetVersion\Aliencube.$projectName.dll -appveyor
 }

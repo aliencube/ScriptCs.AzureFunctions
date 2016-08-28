@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>ScriptCs.AzureFunctions</id>
+    <version>$version$</version>
+    <title>ScriptCs.AzureFunctions</title>
+    <authors>Aliencube Community</authors>
+    <owners>justinyoo</owners>
+    <licenseUrl>https://github.com/aliencube/ScriptCs.AzureFunctions/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/aliencube/ScriptCs.AzureFunctions</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <summary>
+      This provides a script pack to emulate Azure Functions on developers' local machine.
+    </summary>
+    <description>
+      <![CDATA[
+        This provides a script pack to emulate Azure Functions on developers' local machine.
+      ]]>
+    </description>
+    <copyright>Aliencube Community. All rights reserved.</copyright>
+    <tags>Aliencube, ScriptCs, Script, Pack, Azure, Functions</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+      <dependency id="Microsoft.Azure.WebJobs.Extensions" version="1.0.1" />
+      <dependency id="Newtonsoft.Json" version="8.0.3" />
+      <dependency id="ScriptCs.Contracts" version="0.16.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\**\Aliencube.ScriptCs.AzureFunctions.*" target="lib" />
+  </files>
+</package>

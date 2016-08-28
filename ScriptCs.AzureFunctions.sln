@@ -11,13 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		build-package.ps1 = build-package.ps1
+		build.bat = build.bat
 		LICENSE = LICENSE
 		README.md = README.md
+		run-tests.ps1 = run-tests.ps1
 		ScriptCs.AzureFunctions.sln.DotSettings = ScriptCs.AzureFunctions.sln.DotSettings
 		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptCs.AzureFunctions", "src\ScriptCs.AzureFunctions\ScriptCs.AzureFunctions.csproj", "{0317C35B-6C5D-4E04-B242-96A2180F90A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptCs.AzureFunctions.Tests", "test\ScriptCs.AzureFunctions.Tests\ScriptCs.AzureFunctions.Tests.csproj", "{66265479-1228-47DC-8F52-2F223879053A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,11 +35,16 @@ Global
 		{0317C35B-6C5D-4E04-B242-96A2180F90A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0317C35B-6C5D-4E04-B242-96A2180F90A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0317C35B-6C5D-4E04-B242-96A2180F90A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66265479-1228-47DC-8F52-2F223879053A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66265479-1228-47DC-8F52-2F223879053A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66265479-1228-47DC-8F52-2F223879053A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66265479-1228-47DC-8F52-2F223879053A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0317C35B-6C5D-4E04-B242-96A2180F90A8} = {CB8268B9-74D7-4079-B644-CFFBAF08659D}
+		{66265479-1228-47DC-8F52-2F223879053A} = {B0F77766-89C7-47F9-B40F-2FD1C44FC1C0}
 	EndGlobalSection
 EndGlobal

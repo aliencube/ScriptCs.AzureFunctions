@@ -1,6 +1,72 @@
 # ScriptCs.AzureFunctions #
 
+[![Build status](https://ci.appveyor.com/api/projects/status/3yn8lsew9hg17sh7/branch/dev?svg=true)](https://ci.appveyor.com/project/justinyoo/scriptcs-azurefunctions/branch/dev) | [![](https://img.shields.io/nuget/v/ScriptCs.AzureFunctions.svg)](https://www.nuget.org/packages/ScriptCs.AzureFunctions)
+
 **ScriptCs.AzureFunctions** provides a script pack to emulate Azure Functions on developers' local machine.
+
+
+## Getting Started ##
+
+In order to use **ScriptCs.AzureFunctions** in your `.csx` file, firstly you need to download NuGet package of this script pack.
+
+
+### `NuGet.Config` ###
+
+Your `NuGet.Config` **MUST** be compatible to version 2.x; otherwise ScriptCs will be complaining to install NuGet packages. There are a few ways to sort this out.
+
+* Update `%APPDATA%\NuGet\NuGet.Config`: This affects on all other packages globally.
+* Add `scriptcs_nuget.config` under your ScriptCs folder: This only affects on your specific ScriptCs folder.
+
+Either way, the NuGet endpoint URL for the version 2.x should be included like:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="nuget.org" value="https://www.nuget.org/api/v2/" />
+  </packageSources>
+</configuration>
+```
+
+
+### Installing ScriptPack ###
+
+If your NuGet feed is ready, download **ScriptCs.v** into your working folder.
+
+```
+scriptcs -install ScriptCs.AzureFunctions
+```
+
+
+### Writing ScriptCs Code ###
+
+Now you are ready to go. Here's a sample `test.csx` file to test `run.csx` in a local Azure Functions emulated environment.
+
+```csharp
+#load "run.csx"
+
+using Microsoft.Azure.WebJobs.Extensions;
+using Microsoft.Azure.WebJobs.Host;
+
+var af = Require<AzureFunctionsScriptPack>();
+
+var req = new HttpRequestMessage();
+TraceWriter log = new TraceMonitor();
+
+var res = Run(req, log).Result;
+
+Console.WriteLine(mc.Status);
+Console.WriteLine(res.Content.ReadAsStringAsync().Result);
+```
+
+
+### Running ScriptCs Code ###
+
+Once you complete writing a code, run it on your command prompt:
+
+```
+scriptcs test.csx
+```
 
 
 ## Contribution ##

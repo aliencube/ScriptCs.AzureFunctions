@@ -57,7 +57,7 @@ namespace Aliencube.ScriptCs.AzureFunctions
         /// <returns>Returns the context.</returns>
         public IScriptPackContext GetContext()
         {
-            return new AzureFunctions();
+            return new AzureFunctionsPackContext();
         }
 
         /// <summary>

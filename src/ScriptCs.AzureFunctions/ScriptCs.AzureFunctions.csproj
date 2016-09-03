@@ -101,7 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AzureFunctions.cs" />
+    <Compile Include="AzureFunctionsPackContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptPack.cs" />
   </ItemGroup>

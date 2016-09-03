@@ -55,7 +55,6 @@ TraceWriter log = new TraceMonitor();
 
 var res = Run(req, log).Result;
 
-Console.WriteLine(mc.Status);
 Console.WriteLine(res.Content.ReadAsStringAsync().Result);
 ```
 
